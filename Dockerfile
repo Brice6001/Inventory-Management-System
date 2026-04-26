@@ -16,8 +16,8 @@ COPY src src
 # Package the application
 RUN ./mvnw package -DskipTests
 
-# 2. Run Stage: Use a lightweight Java 17 image
-FROM openjdk:17-jdk-slim
+# 2. Run Stage: Use Eclipse Temurin (official OpenJDK replacement)
+FROM eclipse-temurin:17-jdk-slim
 WORKDIR /app
 
 # Copy the JAR file from the build stage
